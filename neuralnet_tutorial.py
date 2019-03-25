@@ -4,9 +4,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 import random
 
-class MyClassifier(nn.Module):
+class MyNeuralNet(nn.Module):
     def __init__(self):
-        super(MyClassifier, self).__init__()
+        super(MyNeuralNet, self).__init__()
         self.linear_layer_1 = nn.Linear(2, 2)
         self.non_linear_func_1 = F.relu
         self.linear_layer_2 = nn.Linear(2, 1)
@@ -33,7 +33,7 @@ examples = [
     [1, 1,  1],
 ]
 
-model = MyClassifier()
+model = MyNeuralNet()
 criterion = MyLossFunction()
 optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
